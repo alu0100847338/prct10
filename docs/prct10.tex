@@ -1,0 +1,94 @@
+\documentclass[spanish,a4paper,10pt]{article}
+
+\usepackage{latexsym,amsfonts,amssymb,amstext,amsthm,float,amsmath}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips]{epsfig}
+\usepackage{doc}
+
+\begin{document}
+\title{Número $\pi$}
+\author{Técnicas Experimentales \\ Práctica de Laboratorio \#10}
+\date{11 de abril de 2014}
+
+\maketitle
+
+\begin{abstract}
+El objetivo de esta práctica es entregar un documento en PDF mediante \textsf{Latex}
+cuyo tema principal sea el número $\pi$. En dicho documento se deberán mostrar sus partes más importantes.
+\end{abstract}
+
+\section{Historia del número $\pi$}
+Desde que el ser humano desarrolló la capacidad de contar y empezó a 
+explorar las propiedades de esos entes abstractos llamados números se 
+ha sentido fascinado por lo que generacones de mentes curiosas iban descubriendo. 
+A medida que nuestro conocimiento sobre ellos aumentaba, alguno de ellos llamaban 
+especialmente la atencióny, a veces, hasta los mitificabamos. Pero si hay un número 
+que ha fascinado y que ha hecho correr ríos de tinta, ese es $\pi$ (pi). Un número que, 
+a pesar de contar con una larga historia, no fue "bautizado" con el nombre con el que le
+conocemos hoy hasta el siglo XVIII.
+
+Pi es el número que se obtiene de dividir la longitud de una circunferencia por su diámetro.
+No importa el tamaño de la circunferencia. Grande o pequeña, la proporción
+entre su longitud y su diámetro es siempre la misma. Aunque es probable que esta propiedad 
+fuera conocidad con anterioridad,los grandes estudiosos de este número fueron los
+antiguos griegos, como Anaxágoras, Hipócrates de Quios o Antifronte de Atenas. Anteriormente, 
+el valor de $\pi$ se determinaba, casi con seguridad, mediante medidas
+experimentales. Arquímedes fue el primero que sepamos, que realizó una estimación teórica de su valor. 
+Usando polígonos circunscritos e inscritos, determinó que $\pi$
+era mayor que 223/71 y menor que 22/7.
+
+Siguiendo el método de Arquímedes, otros matemáticos consiguieron mejores aproximaciones, 
+y ya en 480, Zu Chongzhi había determinado el valor de $\pi$ entre 3.1415926 y 
+3.1415927.
+
+\section{Cálculo del número $\pi$ y posible ejemplo de su cálculo aproximado}
+$\pi$ se puede calcular mediante integración:
+$$\int_{0}^{1} \! \frac{4}{1+x^2}\, dx = 4(atan(1) -atan(0) = \pi $$
+
+Esta integral se puede aproximar numéricamente con una dórmula de cuadratura.
+
+Si se utiliza la regla del punto medio se obtien:
+
+\begin{center}
+ $ \pi \approx \frac{1}{n} \sum\limits_{i=1}^{n}f(x_i)\,$,
+ con $f(x) = \frac{4}{1+x^2}\,$,
+ $x_i = \frac{i - \frac{1}{2}}{n}$,
+ para $i = 1, \dots, n$
+\end{center}
+
+
+Ahora, como ejemplo, podríamos crear un programa en \textsf{Python} que reciba 
+como entrada el número de subintervalos con los que se desea abordar la 
+aproximación de $\pi$.
+
+A partir de él se deberá calcular y mostrar por la consola:
+\begin{enumerate}
+ \item 
+   Los extremos de los sbintervalos.
+ \item 
+   El punto $x_i$.
+ \item
+   El valor de la función de aproximación de $pi$, $f(x_i)$.
+ \item
+   El resultado de la aproximación.
+ \item  La constante $pi$ con treinta y cinco decimales.
+\end{enumerate}
+
+Por ejemplo, si se utilizan 4 subintervalos, la salida debería ser:
+
+\begin{footnotesize}
+\begin{verbatim}
+Introduzca el número de intervalos (n > 0): 4
+Subintervalo: [0 , 0.25] x_i: 0.125 fx_i: 3.93846
+Subintervalo: [0.25, 0.5 ] x_i: 0.375 fx_i: 3.50685
+Subintervalo: [0.5 , 0.75] x_i: 0.625 fx_i: 2.8764
+Subintervalo: [0.75, 1 ] x_i: 0.875 fx_i: 2.26549
+
+El valor aproximado de PI es: 3.14680051839
+El valor de PI con 35 decimales: 3.1415926535897931159979634685441852 \end{verbatim}
+\end{footnotesize}
+
+
+
+
